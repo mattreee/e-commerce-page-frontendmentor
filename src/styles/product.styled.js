@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ProductStyles = styled.section`
    width: 80vw;
    margin: 0 auto;
+   margin-top: 4rem;
 
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -69,11 +70,9 @@ export const ButtonContainerStyle = styled.div`
 `;
 
 export const ButtonQuantStyle = styled.button`
-   background: none;
-   color: hsl(26, 100%, 55%);
-   font-size: 1.8rem;
    font-weight: 700;
-   padding: .2em .4em;
+   padding: 0 1.5em;
+   background: none;
    border: none;
    cursor: pointer;
 `;
@@ -98,5 +97,13 @@ export const AddButton = styled.button`
       width: 1.2rem;
       filter: invert(87%) sepia(89%) saturate(3%) hue-rotate(180deg) brightness(110%) contrast(97%);
       margin-right: 1rem;
+
+      &:hover {
+         opacity: .7;
+      }
+   }
+
+   &:hover {
+      opacity: .7;
    }
 `;

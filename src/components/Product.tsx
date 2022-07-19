@@ -12,13 +12,28 @@ import {
 	QuantStyle,
 	AddButton,
 } from "../styles/product.styled";
-
+import ProductCarousel from "./ProductCarousel";
 import Cart from "../images/icon-cart.svg";
+import Plus from "../images/icon-plus.svg";
+import Minus from "../images/icon-minus.svg";
+
+import { useState } from "react";
 
 const Product = () => {
+	const [quantity, setQuantity] = useState(0);
+
+	const plusQuantity = () => {
+		setQuantity((prevState) => prevState + 1);
+	};
+
+	const minusQuantity = () => {
+		if (quantity === 0) return;
+		setQuantity((prevState) => prevState - 1);
+	};
+
 	return (
 		<ProductStyles>
-			<div></div>
+			<ProductCarousel />
 			<div>
 				<CompanyStyle>Sneaker Company</CompanyStyle>
 				<TitleStyle>Fall Limited Edition Sneakers</TitleStyle>
@@ -31,9 +46,13 @@ const Product = () => {
 				<TotalPriceStyle>$250.00</TotalPriceStyle>
 				<AddContainer>
 					<ButtonContainerStyle>
-						<ButtonQuantStyle>-</ButtonQuantStyle>
-						<QuantStyle>0</QuantStyle>
-						<ButtonQuantStyle>+</ButtonQuantStyle>
+						<ButtonQuantStyle onClick={minusQuantity}>
+							<img src={Minus} alt="" />
+						</ButtonQuantStyle>
+						<QuantStyle>{quantity}</QuantStyle>
+						<ButtonQuantStyle onClick={plusQuantity}>
+							<img src={Plus} alt="" />
+						</ButtonQuantStyle>
 					</ButtonContainerStyle>
 					<AddButton>
 						{" "}

@@ -49,6 +49,7 @@ export const ProfileStyle = styled.img`
    margin-left: 2rem;
    border: 2px solid white;
    border-radius: 50%;
+   cursor: pointer;
 
    &:hover {
       border-color: hsl(26, 100%, 55%);;
