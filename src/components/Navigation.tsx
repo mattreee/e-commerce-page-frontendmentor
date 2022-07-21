@@ -1,12 +1,14 @@
 import Logo from "../images/logo.svg";
-import Cart from "../images/icon-cart.svg";
 import ProfileImg from "../images/image-avatar.png";
 
-import { NavigationStyle } from "../styles/navigation.styled";
-import { LogoStyle } from "../styles/navigation.styled";
-import { ListStyle } from "../styles/navigation.styled";
-import { CartStyle } from "../styles/navigation.styled";
-import { ProfileStyle } from "../styles/navigation.styled";
+import {
+	NavigationStyle,
+	LogoStyle,
+	ListStyle,
+	ProfileStyle,
+} from "../styles/navigation.styled";
+
+import CartWindow from "./CartWindow";
 
 const Navigation = () => {
 	return (
@@ -21,7 +23,7 @@ const Navigation = () => {
 				<li>Contact</li>
 			</ListStyle>
 
-			<CartStyle src={Cart} alt="cart" />
+			<CartWindow />
 
 			<ProfileStyle src={ProfileImg} alt="" />
 		</NavigationStyle>

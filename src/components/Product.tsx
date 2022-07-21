@@ -18,9 +18,11 @@ import Plus from "../images/icon-plus.svg";
 import Minus from "../images/icon-minus.svg";
 
 import { useState } from "react";
+import { useQuantity } from "../CartContext";
 
 const Product = () => {
 	const [quantity, setQuantity] = useState(0);
+	const { setQuantities } = useQuantity();
 
 	const plusQuantity = () => {
 		setQuantity((prevState) => prevState + 1);
@@ -29,6 +31,10 @@ const Product = () => {
 	const minusQuantity = () => {
 		if (quantity === 0) return;
 		setQuantity((prevState) => prevState - 1);
+	};
+
+	const addValue = () => {
+		setQuantities((prevState: any) => [...prevState, quantity]);
 	};
 
 	return (
@@ -54,7 +60,7 @@ const Product = () => {
 							<img src={Plus} alt="" />
 						</ButtonQuantStyle>
 					</ButtonContainerStyle>
-					<AddButton>
+					<AddButton onClick={addValue}>
 						{" "}
 						<img src={Cart} alt="" />
 						Add to cart

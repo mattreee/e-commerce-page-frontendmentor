@@ -35,15 +35,6 @@ export const ListStyle = styled.ul`
    }
 `;
 
-export const CartStyle = styled.img`
-   margin-left: auto;
-   cursor: pointer;
-
-   &:hover {
-      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(221deg) brightness(89%) contrast(106%);
-   }
-`;
-
 export const ProfileStyle = styled.img`
    max-width: 3rem;
    margin-left: 2rem;
