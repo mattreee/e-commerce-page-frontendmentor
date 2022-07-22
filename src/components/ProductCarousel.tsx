@@ -11,22 +11,44 @@ import {
 	MainImageStyle,
 	ThumbsStyle,
 } from "../styles/carousel.styled";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import CarouselModal from "./CarouselModal";
 
 const thumbImages = [ThumbOne, ThumbTwo, ThumbThree, ThumbFour];
 const images = [ImageOne, ImageTwo, ImageThree, ImageFour];
 
 const ProductCarousel = () => {
 	const [mainImage, setMainImage] = useState(0);
+	const [modalOpen, setModalOpen] = useState(false);
 
 	const selectThumb = (index: number) => {
 		setMainImage(index);
 	};
 
+	const changeModal = () => {
+		setModalOpen((prevState) => !prevState);
+	};
+
+	useEffect(() => {
+		if (modalOpen) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "auto";
+		}
+		console.log("something");
+	}, [modalOpen]);
+
 	return (
 		<ProductCarouselStyles>
+			{modalOpen && (
+				<CarouselModal
+					mainImage={mainImage}
+					setMainImage={setMainImage}
+					changeModal={changeModal}
+				/>
+			)}
 			<MainImageStyle>
-				<img src={images[mainImage]} alt="" />
+				<img src={images[mainImage]} alt="" onClick={changeModal} />
 			</MainImageStyle>
 			<ThumbsStyle selectedImage={mainImage + 1}>
 				{thumbImages.map((elem: any, index: number) => (

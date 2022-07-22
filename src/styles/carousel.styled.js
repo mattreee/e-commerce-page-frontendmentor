@@ -9,10 +9,12 @@ export const ProductCarouselStyles = styled.section`
 
 export const MainImageStyle = styled.div`
    width: 25vw;
+   min-width: 15rem;
 
    img {
       max-width: 100%;
       border-radius: 15px;
+      cursor: pointer;
    }
 `;
 
