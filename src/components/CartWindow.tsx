@@ -18,12 +18,15 @@ const CartWindow = () => {
 
 	return (
 		<CartWindowStyles>
-			<img
-				className="cart-icon"
-				src={CartIcon}
-				alt=""
-				onClick={changeWindowVisibility}
-			/>
+			<p>
+				<img
+					className="cart-icon"
+					src={CartIcon}
+					alt=""
+					onClick={changeWindowVisibility}
+				/>
+				{emptyCartBool && <sup>{quantities.length}</sup>}
+			</p>
 			{windowVisible && (
 				<WindowContainer>
 					<h2 className="cart-title">Cart</h2>

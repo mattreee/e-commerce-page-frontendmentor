@@ -7,6 +7,17 @@ export const CartWindowStyles = styled.div`
    .cart-icon {
       cursor: pointer;
    }
+
+   sup {
+      font-size: .6rem;
+      position: absolute;
+      right: -.5em;
+      top: -.3em;
+      background-color: hsl(26, 100%, 55%);
+      color: white;
+      padding: 0 .5em;
+      border-radius: 40%;
+   }
 `;
 
 export const WindowContainer = styled.div`
