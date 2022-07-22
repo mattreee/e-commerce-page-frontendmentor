@@ -52,13 +52,9 @@ const Product = () => {
 				<TotalPriceStyle>$250.00</TotalPriceStyle>
 				<AddContainer>
 					<ButtonContainerStyle>
-						<ButtonQuantStyle onClick={minusQuantity}>
-							<img src={Minus} alt="" />
-						</ButtonQuantStyle>
+						<ButtonQuantStyle src={Minus} alt="" onClick={minusQuantity} />
 						<QuantStyle>{quantity}</QuantStyle>
-						<ButtonQuantStyle onClick={plusQuantity}>
-							<img src={Plus} alt="" />
-						</ButtonQuantStyle>
+						<ButtonQuantStyle src={Plus} alt="" onClick={plusQuantity} />
 					</ButtonContainerStyle>
 					<AddButton onClick={addValue}>
 						{" "}

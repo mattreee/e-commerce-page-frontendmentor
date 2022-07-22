@@ -35,7 +35,6 @@ const ProductCarousel = () => {
 		} else {
 			document.body.style.overflow = "auto";
 		}
-		console.log("something");
 	}, [modalOpen]);
 
 	return (

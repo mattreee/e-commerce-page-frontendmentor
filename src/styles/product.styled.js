@@ -69,12 +69,9 @@ export const ButtonContainerStyle = styled.div`
    border-radius: 5px;
 `;
 
-export const ButtonQuantStyle = styled.button`
-   font-weight: 700;
-   padding: 0 1.5em;
-   background: none;
-   border: none;
+export const ButtonQuantStyle = styled.img`
    cursor: pointer;
+   padding: 1rem;
 `;
 
 export const QuantStyle = styled.div`
