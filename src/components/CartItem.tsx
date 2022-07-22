@@ -3,8 +3,19 @@ import { CartItemStyle } from "../styles/cart.styled";
 import ThumbOne from "../images/image-product-1-thumbnail.jpg";
 import IconDelete from "../images/icon-delete.svg";
 
-const CartItem = ({ quant }: any) => {
+import { useQuantity } from "../CartContext";
+
+const CartItem = ({ quant, index }: any) => {
+	const { quantities, setQuantities } = useQuantity();
 	const price = 125;
+
+	const deleteItem = (ind: number) => {
+		const newQuant = quantities.filter((elem: any, index: number) => {
+			return index !== ind;
+		});
+
+		setQuantities(newQuant);
+	};
 
 	return (
 		<CartItemStyle>
@@ -18,7 +29,12 @@ const CartItem = ({ quant }: any) => {
 					<span className="item-total">$ {quant * price}</span>
 				</p>
 			</div>
-			<img className="cart__item--delete" src={IconDelete} alt="" />
+			<img
+				className="cart__item--delete"
+				src={IconDelete}
+				alt=""
+				onClick={() => deleteItem(index)}
+			/>
 		</CartItemStyle>
 	);
 };

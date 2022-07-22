@@ -31,8 +31,12 @@ const CartWindow = () => {
 						{!emptyCartBool && (
 							<p className="empty-cart">Your cart is empty.</p>
 						)}
-						{quantities.map((elem: any) => (
-							<CartItem key={String(Math.random())} quant={elem} />
+						{quantities.map((elem: any, index: number) => (
+							<CartItem
+								key={String(Math.random())}
+								quant={elem}
+								index={index}
+							/>
 						))}
 						{emptyCartBool && (
 							<button className="button-checkout">Checkout</button>

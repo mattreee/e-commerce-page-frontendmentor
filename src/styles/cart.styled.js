@@ -29,6 +29,7 @@ export const WindowContainer = styled.div`
    .empty-cart {
       font-weight: 700;
       text-align: center;
+      margin: 4rem 0;
    }
 
    .cart-contents {
