@@ -6,6 +6,10 @@ import ImageOne from "../images/image-product-1.jpg";
 import ImageTwo from "../images/image-product-2.jpg";
 import ImageThree from "../images/image-product-3.jpg";
 import ImageFour from "../images/image-product-4.jpg";
+
+import IconPrevious from "../images/icon-previous.svg";
+import IconNext from "../images/icon-next.svg";
+
 import {
 	ProductCarouselStyles,
 	MainImageStyle,
@@ -29,17 +33,32 @@ const ProductCarousel = () => {
 		setModalOpen((prevState) => !prevState);
 	};
 
+	const prevImage = () => {
+		if (mainImage === 0) return;
+		setMainImage((prevState: any) => prevState - 1);
+	};
+
+	const nextImage = () => {
+		if (mainImage === 3) return;
+		setMainImage((prevState: any) => prevState + 1);
+	};
+
+	const mobile = window.innerWidth > 750;
+
 	useEffect(() => {
-		if (modalOpen) {
+		if (!mobile) {
+			return;
+		} else if (modalOpen) {
 			document.body.style.overflow = "hidden";
 		} else {
 			document.body.style.overflow = "auto";
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [modalOpen]);
 
 	return (
 		<ProductCarouselStyles>
-			{modalOpen && (
+			{modalOpen && mobile && (
 				<CarouselModal
 					mainImage={mainImage}
 					setMainImage={setMainImage}
@@ -48,17 +67,33 @@ const ProductCarousel = () => {
 			)}
 			<MainImageStyle>
 				<img src={images[mainImage]} alt="" onClick={changeModal} />
-			</MainImageStyle>
-			<ThumbsStyle selectedImage={mainImage + 1}>
-				{thumbImages.map((elem: any, index: number) => (
+				<>
 					<img
-						key={elem}
-						src={elem}
+						className="mobile-carousel-control previous"
+						src={IconPrevious}
 						alt=""
-						onClick={() => selectThumb(index)}
+						onClick={prevImage}
 					/>
-				))}
-			</ThumbsStyle>
+					<img
+						className="mobile-carousel-control next"
+						src={IconNext}
+						onClick={nextImage}
+						alt=""
+					/>
+				</>
+			</MainImageStyle>
+			{mobile && (
+				<ThumbsStyle selectedImage={mainImage + 1}>
+					{thumbImages.map((elem: any, index: number) => (
+						<img
+							key={elem}
+							src={elem}
+							alt=""
+							onClick={() => selectThumb(index)}
+						/>
+					))}
+				</ThumbsStyle>
+			)}
 		</ProductCarouselStyles>
 	);
 };

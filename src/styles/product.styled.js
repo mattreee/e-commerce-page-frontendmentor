@@ -7,6 +7,29 @@ export const ProductStyles = styled.section`
 
    display: grid;
    grid-template-columns: 1fr 1fr;
+
+   .prices-container {
+      display: grid;
+      width: min-content;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+   }
+
+   @media (max-width: 750px) {
+      width: auto;
+      grid-template-columns: 1fr;
+      margin: 0;
+
+      .prices-container {
+         display: flex;
+         width: 100%;
+         padding-right: 1rem;
+
+         span:nth-of-type(3) {
+            margin-left: auto;
+         }
+      }
+   }
 `;
 
 export const CompanyStyle = styled.div`
@@ -16,11 +39,20 @@ export const CompanyStyle = styled.div`
    letter-spacing: .1em;
 
    margin: 1.5rem 0;
+
+   @media (max-width: 750px) {
+      padding: 0 1rem;
+   }
 `;
 
 export const TitleStyle = styled.h1`
-   font-size: 3rem;
+   font-size: 4vw;
    margin-bottom: 2rem;
+
+   @media (max-width: 750px) {
+      font-size: 5vh;
+      padding: 0 1rem;
+   }
 `;
 
 export const DescriptionStyle = styled.p`
@@ -30,11 +62,19 @@ export const DescriptionStyle = styled.p`
    line-height: 1.5rem;
 
    margin-bottom: 1.5rem;
+
+   @media (max-width: 750px) {
+      padding: 0 1rem;
+   }
 `;
 
 export const PriceStyle = styled.span`
    font-size: 2rem;
    font-weight: 700;
+
+   @media (max-width: 750px) {
+      padding: 0 1rem;
+   }
 `;
 
 export const DiscountStyle = styled.span`
@@ -46,7 +86,7 @@ export const DiscountStyle = styled.span`
    border-radius: 5px;
 `;
 
-export const TotalPriceStyle = styled.p`
+export const TotalPriceStyle = styled.span`
    color: hsl(220, 14%, 75%);
    font-weight: 700;
    font-size: 1.05rem;
@@ -59,6 +99,11 @@ export const TotalPriceStyle = styled.p`
 export const AddContainer = styled.div`
    display: flex;
    gap: 1rem;
+
+   @media (max-width: 750px) {
+      flex-direction: column;
+      padding: 0 1rem;
+   }
 `;
 
 export const ButtonContainerStyle = styled.div`
@@ -67,17 +112,32 @@ export const ButtonContainerStyle = styled.div`
    display: flex;
    align-items: center;
    border-radius: 5px;
+
+   @media (max-width: 750px) {
+      width: 100%;
+      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+   }
 `;
 
 export const ButtonQuantStyle = styled.img`
    cursor: pointer;
    padding: 1rem;
+
+   @media (max-width: 750px) {
+      margin: 0 auto;
+   }
 `;
 
 export const QuantStyle = styled.div`
    font-weight: 700;
    font-size: 1.1rem;
    padding: 0 1.5em;
+
+   @media (max-width: 750px) {
+      margin: 0 auto;
+   }
 `;
 
 export const AddButton = styled.button`

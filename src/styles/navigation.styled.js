@@ -10,6 +10,11 @@ export const NavigationStyle = styled.nav`
    margin: 0 auto;
 
    border-bottom: 3px solid hsl(223, 64%, 98%);
+
+   .mobile-menu {
+      margin-right: 1rem;
+      filter: brightness(50%);
+   }
 `;
 
 export const LogoStyle = styled.img`

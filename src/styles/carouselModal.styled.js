@@ -34,10 +34,6 @@ export const CarouselModalStyles = styled.div`
       border-radius: 50%;
 
       cursor: pointer;
-
-      &:hover {
-         fill: red;
-      }
    }
 
    .previous {
@@ -56,8 +52,11 @@ export const CarouselModalStyles = styled.div`
       right: 0;
       top: -2rem;
       cursor: pointer;
+      filter: brightness(300%);
 
-      filter: invert(75%) sepia(68%) saturate(5648%) hue-rotate(348deg) brightness(107%) contrast(101%);
+      &:hover {
+         filter: invert(75%) sepia(68%) saturate(5648%) hue-rotate(348deg) brightness(107%) contrast(101%);
+      }
    }
 `;
 

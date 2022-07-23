@@ -40,7 +40,7 @@ const Product = () => {
 	return (
 		<ProductStyles>
 			<ProductCarousel />
-			<div>
+			<section>
 				<CompanyStyle>Sneaker Company</CompanyStyle>
 				<TitleStyle>Fall Limited Edition Sneakers</TitleStyle>
 				<DescriptionStyle>
@@ -48,8 +48,11 @@ const Product = () => {
 					Featuring a durable rubber outer sole, they’ll withstand everything
 					the weather can offer.
 				</DescriptionStyle>
-				<PriceStyle>$125.00</PriceStyle> <DiscountStyle>50%</DiscountStyle>
-				<TotalPriceStyle>$250.00</TotalPriceStyle>
+				<div className="prices-container">
+					<PriceStyle>$125.00</PriceStyle>
+					<DiscountStyle>50%</DiscountStyle>
+					<TotalPriceStyle>$250.00</TotalPriceStyle>
+				</div>
 				<AddContainer>
 					<ButtonContainerStyle>
 						<ButtonQuantStyle src={Minus} alt="" onClick={minusQuantity} />
@@ -62,7 +65,7 @@ const Product = () => {
 						Add to cart
 					</AddButton>
 				</AddContainer>
-			</div>
+			</section>
 		</ProductStyles>
 	);
 };

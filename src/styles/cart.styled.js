@@ -29,6 +29,7 @@ export const WindowContainer = styled.div`
    margin-left: -10rem;
    box-shadow: 5px 5px 15px 0px rgba(0,0,0, .2);
    border-radius: 10px;
+   z-index: 5;
    
    .cart-title {
       color: black;
@@ -61,6 +62,14 @@ export const WindowContainer = styled.div`
       padding: 1em 0;
       margin: 1em 0;
       cursor: pointer;
+   }
+
+   @media (max-width: 750px) {
+      margin: 0;
+
+      margin-top: 2rem;
+      margin-left: -14rem;
+      box-shadow: 5px 5px 15px 0px rgba(0,0,0, .3);
    }
 `;
 

@@ -10,11 +10,41 @@ export const ProductCarouselStyles = styled.section`
 export const MainImageStyle = styled.div`
    width: 25vw;
    min-width: 15rem;
+   position: relative;
 
    img {
       max-width: 100%;
       border-radius: 15px;
       cursor: pointer;
+   }
+
+   .mobile-carousel-control {
+      display: none;
+      position: absolute;
+      background-color: white;
+      padding: 1em;
+      border-radius: 50%;
+      top: 50%;
+      margin: 0 1rem;
+   }
+
+   .next {
+      right: 0;
+   }
+
+   @media (max-width: 750px) {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      img {
+         border-radius: 0;
+         cursor: auto;
+      }
+
+      .mobile-carousel-control {
+         display: block;
+      }
    }
 `;
 
@@ -39,8 +69,4 @@ export const ThumbsStyle = styled.div`
       border: 2px solid hsl(26, 100%, 55%);
       opacity: .65;
    }
-`;
-
-export const ThumbStyle = styled.img`
-   
 `;
