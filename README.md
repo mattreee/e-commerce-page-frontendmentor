@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![screenshot](./whole-page-screenshot.jpg)
+![screenshot](./whole-page-screenshot.png)
 
 ### Links
 
